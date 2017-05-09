@@ -1,0 +1,116 @@
+<navbar></navbar>
+<div class="container-fluid trueContacts">
+  <eu-spinner show-spinner="$ctrl.pageReady"></eu-spinner>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 text-left">
+        <h3>Contact Me</h3>
+        <p>Address</p>
+        <p><i class="fa fa-map-marker  text-danger"></i> Lviv, Ukraine</p>
+        <p><i class="fa fa-envelope-o  text-success"></i> sovapetro1@gmail.com</p>
+        <p><i class="fa fa-phone text-success"></i> (097)2356258</p>
+      </div>
+      <div class="col-md-12 text-center">
+        <a href="#" class='btn'><i class="fa fa fa-linkedin fa-2x"></i></a>
+        <a href="#" class='btn'><i class="fa fa-github-square fa-2x" ></i></a>
+        <a href="#" class='btn'><i class="fa fa fa-gitlab fa-2x"></i></a>
+        <a href="#" class="btn"><i class="fa fa-codepen fa-2x"></i></a>
+        <a href="#" class="btn"><i class="fa fa-facebook fa-2x"> </i></a>
+        <p class="smallfont text-center">Lviv, 2017</p>
+      </div>
+    </div>
+    <!--- temporary -->
+    <!--<div class="row">
+      <div class="col-md-12">
+        <form name="$ctrl.formGeneral" novalidate>
+          <div
+            ng-repeat="field in $ctrl.formArray"
+            ng-form="repeated_form">
+            <input type="text"
+              name="field.name"
+              ng-required="field.isRequired"
+              ng-model="field.name"
+              placeholder="{{field.placeholder}}" />
+          </div>
+          <button type="submit" ng-click="$ctrl.submit()">Submit</button>
+        </form>
+      </div>
+    </div>-->
+    <!-- end temporary --> 
+
+    <div class="row">
+      <div class="col-md-12 text-left">
+        <h2>This page contens all testable and not implemented yet stuffs</h2>
+        <eu-support euicon="$ctrl.userBtn">
+        </eu-support>
+        <eu-support euicon="$ctrl.adminBtn">
+        </eu-support>
+        <eu-support euicon="$ctrl.supportBtn">
+        </eu-support>
+      </div>
+    </div>
+    <div class="row">
+    <div style="display: flex">
+      <div style="border:1px solid #999; width:20%" ng-repeat="item in $ctrl.taskBar">
+        <label ng-bind="item.period"></label><br>
+        <label>Start</label>
+        <input type="time" /><br>
+        <label>End</label>
+        <input type="time" ng-model="item.end" /><br>
+        <label>Status</label>
+        <input type="checkbox" ng-model="item.done" /><br>
+        <button ng-click="$ctrl.evaluate(item)">evaluate</button>
+      </div>
+    </div>
+      <div class="col-md-12">
+        <div style="display: flex; margin-top: 30px;">
+          <div style="margin: 10px;" ng-repeat="item in $ctrl.filledBar track by $index">
+            <svg height="35" width="35">
+              <circle cx="17" cy="17" r="15" stroke="black" stroke-width="1" fill="{{item}}" />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-12">
+      <input type="button" value="togle underHood" ng-click="$ctrl.toggleHood()" />
+
+      <div class="hide_show tempo-bordered" ng-if="$ctrl.underHood">
+        <section>
+          <div ui-ace="$ctrl.editorOptions"><span ng-bind="$ctrl.defaultData">
+        import firebase from 'firebase';
+        import consttable from './tempo/mock_table.js';
+        import mockuser from './tempo/mock_user.js';
+        import mockcomp from './tempo/mock_company.js';
+
+        class ExamplesController {
+          constructor($firebaseObject, $firebaseArray, $state, ExamplesService, LOCAL_CONST) {
+            this.firebaseObject = $firebaseObject;
+            this.firebaseArray = $firebaseArray;
+            this.service = ExamplesService;
+            this.$state = $state;
+            this.LOCAL_CONST = LOCAL_CONST;
+          }
+
+          $onInit () {
+            const rootRef = firebase.database().ref();
+            this.users = {};
+            this.fullDB = mockcomp;
+            this.usersTable = {
+              data: consttable
+            };
+            });
+          }
+      </span></div>
+        </section>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12 text-center buffer">
+        <p class="smallfont text-center">Lviv, 2017</p>
+      </div>
+    </div>
+  </div>
+</div>
+    <eu-footer></eu-footer>
